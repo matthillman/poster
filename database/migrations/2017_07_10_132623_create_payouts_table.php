@@ -16,7 +16,7 @@ class CreatePayoutsTable extends Migration
             $table->increments('id');
 			$table->string('name', 100);
 			$table->string('blurb');
-			$table->timestamp('order_effective_at');
+			$table->date('order_effective_at');
 			$table->unsignedInteger('server_id');
             $table->timestamps();
         });
