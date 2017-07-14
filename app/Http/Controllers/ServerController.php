@@ -85,7 +85,7 @@ class ServerController extends Controller
 		$d = new DateTime($request->order_effective_at, $z);
 		// This is either 5, 6 or 7 but needs to be in 24 hour time, so add 12
 		$d->setTime($request->payout_time + 12, 0);
-		$payout->order_effective_at = $d->getTimestamp();
+		$payout->order_effective_at = $d;
 
 		$order = explode(';', $request->member_order);
 		$members = [];
