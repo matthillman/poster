@@ -27,11 +27,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        Payout::all()->each(function($payout) use ($schedule) {
-			$d = new DateTime;
-			$d->setTimestamp($payout->order_effective_at);
-			$schedule->command(PostPayoutCommand::class, [$payout->id])->dailyAt($d->format("G:i"));
-		});
+        // Payout::all()->each(function($payout) use ($schedule) {
+		// 	$d = new DateTime;
+		// 	$d->setTimestamp($payout->order_effective_at);
+		// 	$schedule->command(PostPayoutCommand::class, [$payout->id])->dailyAt($d->format("G:i"));
+		// });
     }
 
     /**
