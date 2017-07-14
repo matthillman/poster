@@ -19,7 +19,7 @@ class Member extends Model
 	public function getTodaysOrderAttribute() {
 		$origin = $this->payout->order_effective_at;
 		$startDate = new DateTime;
-		$startDate->setTimestamp($origin);
+		$startDate->setTimestamp($origin->getTimestamp());
 		$today = new DateTime;
 		$today->setTime((int)$startDate->format('H'), (int)$startDate->format('M'));
 		$days = $today->diff($startDate)->d;
