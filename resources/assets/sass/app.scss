@@ -1,0 +1,480 @@
+$contentWidth: 900px;
+
+// from Bomgar Brand Identity Standards
+$primaryBrandColor: #ff5500;
+$primaryGrayColor:  #505153;
+$accentColor1: #a2aaad;
+$accentColor2: #253746;
+$accentColor3: #D1E0D7;
+$accentColor4: #B9D9EB;
+$white: white;
+
+$activeGreen: #16c203;
+$activeRed: #d0021b;
+$toastYellow: #f5e411;
+$toastBlue: #4a90e2;
+
+$primaryAccentColor: $accentColor2;
+
+html, body,
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small
+h1, h2,
+h3, h4,
+h5, h6,
+blockquote,
+.mdl-typography--display-4, .mdl-typography--display-4-color-contrast,
+.mdl-typography--display-3, .mdl-typography--display-3-color-contrast,
+.mdl-typography--display-2, .mdl-typography--display-2-color-contrast,
+.mdl-typography--display-1, .mdl-typography--display-1-color-contrast,
+.mdl-typography--headline, .mdl-typography--headline-color-contrast,
+.mdl-typography--title, .mdl-typography--title-color-contrast,
+.mdl-typography--subhead, .mdl-typography--subhead-color-contrast,
+.mdl-typography--body-2-force-preferred-font, .mdl-typography--body-2-force-preferred-font-color-contrast,
+.mdl-typography--body-1-force-preferred-font, .mdl-typography--body-1-force-preferred-font-color-contrast,
+.mdl-typography--caption-force-preferred-font,
+.mdl-typography--caption-force-preferred-font-color-contrast,
+.mdl-typography--menu,
+.mdl-typography--menu-color-contrast, .mdl-typography--button,
+.mdl-typography--button-color-contrast,
+.mdl-badge[data-badge]:after,
+.mdl-button,
+.mdl-list__item,
+.mdl-layout__title, .mdl-layout-title,
+.mdl-layout__drawer-button,
+.mdl-snackbar,
+.mdl-snackbar__action,
+.mdl-textfield__input
+{
+    font-family: -apple-system-body, "Helvetica Neue", sans-serif;
+}
+
+body {
+	background-color: $accentColor2;
+}
+
+.mdl-layout__header {
+	min-height: 48px;
+	// background-color: $primaryBrandColor;
+
+	.mdl-layout__header-row {
+		height: 48px;
+	}
+}
+
+a {
+	color: $primaryBrandColor;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+
+	.mdl-layout__header & {
+		color: $white;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+h4.subhead {
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	margin: 18px 0 0;
+	justify-content: center;
+}
+
+.mdl-layout__header-row .mdl-navigation {
+	height: 100%;
+
+	a.mdl-navigation__link {
+		text-transform: uppercase;
+		font-weight: 700;
+		text-decoration: none;
+		color: $white;
+		padding-top: 5px;
+		border-bottom-width: 5px;
+		border-bottom-style: solid;
+		border-bottom-color: transparent;
+		line-height: 1em;
+		box-sizing: border-box;
+		height: 100%;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		&:hover {
+			border-bottom-color: $white;
+		}
+	}
+}
+
+.mdl-textfield--floating-label.is-focused .mdl-textfield__label,
+.mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
+.mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
+    color: $primaryAccentColor;
+}
+.mdl-textfield__label {
+	input:disabled + & {
+		color: rgba(0, 0, 0, .1);
+	}
+
+	&:after {
+		background-color: $primaryAccentColor;
+	}
+}
+
+.mdl-switch {
+	.mdl-switch__ripple-container .mdl-ripple {
+		background-color: rgba($primaryAccentColor, 1);
+	}
+
+	&.is-checked {
+		.mdl-switch__track {
+			background-color: rgba($primaryAccentColor, 0.5);
+		}
+		.mdl-switch__thumb {
+			background-color: rgba($primaryAccentColor, 1);
+		}
+	}
+}
+
+.mdl-checkbox {
+	&.is-checked {
+		.mdl-checkbox__box-outline {
+			border-color: $primaryAccentColor;
+
+			.mdl-checkbox__tick-outline {
+				background-color: $primaryAccentColor;
+			}
+		}
+	}
+	.mdl-checkbox__ripple-container .mdl-ripple {
+		background-color: rgba($primaryAccentColor, 1);
+	}
+}
+
+.page-content {
+    max-width: $contentWidth;
+    margin: 0 auto;
+    width: 100%;
+}
+
+form {
+    .mdl-card__supporting-text {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
+.flex-vertical-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+	align-items: center;
+
+	&.mdl-card {
+		padding: 16px 0;
+	}
+
+	&.mdl-card__supporting-text {
+        width: 100%;
+        box-sizing: border-box;
+	}
+
+	&.wide > * {
+		width: 90%;
+	}
+
+    form & > * {
+		min-width: 300px;
+        width: 33%;
+        padding-bottom: 20px;
+    }
+}
+
+div.wrap {
+	width: 300px;
+
+	&.center {
+		align-self: center;
+		text-align: center;
+		justify-content: center;
+	}
+}
+label.fake {
+	width: 100%;
+	color: #253746;
+	font-size: 12px;
+	text-align: left;
+}
+.spread {
+	width: 100%;
+	justify-content: space-between;
+	display: flex;
+	margin: 8px 0;
+}
+
+.app-list {
+	min-width: 50%;
+}
+
+.mdl-list.compact {
+	padding: 0;
+	margin: 0;
+}
+
+.drowpdown-textfield {
+    display: flex;
+    flex-flow: row;
+    margin: 0 auto;
+	align-items: center;
+
+	.mdl-menu__container {
+		max-width: 350px;
+		max-height: 200px;
+		overflow: auto;
+		box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
+		border-radius: 4px;
+
+		ul {
+			width: 350px;
+		}
+	}
+
+    .mdl-textfield {
+        display: flex;
+        flex-basis: 0;
+        flex-grow: 1;
+		flex-direction: column;
+    }
+
+    li[disabled] {
+        padding-left: 8px;
+    }
+}
+
+.mdl-list__item-primary-content > .mdl-button {
+	padding: 0;
+	height: 40px;
+	width: 100%;
+	line-height: inherit;
+	font-weight: inherit;
+	text-align: inherit;
+	text-transform: inherit;
+	overflow: visible;
+	font-size: inherit;
+	letter-spacing: inherit;
+	vertical-align: inherit;
+}
+
+.mdl-list__item-secondary-content.horizontal {
+	flex-direction: row;
+	align-items: center;
+}
+
+.mdl-data-table {
+	border-color: $accentColor2;
+	color: $accentColor2;
+	background-color: $accentColor4;
+
+	td {
+		border-top-color: $accentColor2;
+		border-bottom-color: $accentColor2;
+	}
+
+	tbody tr:hover {
+		background-color: $accentColor1;
+	}
+}
+
+@mixin color-style($class, $color) {
+	.#{$class} {
+		color: $color;
+	}
+	.mdl-list__item-avatar.#{$class} {
+		background-color: $color;
+	}
+}
+
+@include color-style('default', $primaryBrandColor);
+@include color-style('accent', $primaryAccentColor);
+@include color-style('accent1', $accentColor1);
+@include color-style('accent2', $accentColor2);
+@include color-style('accent3', $accentColor3);
+@include color-style('accent4', $accentColor4);
+@include color-style('success', $activeGreen);
+@include color-style('warning', $toastYellow);
+@include color-style('error', $activeRed);
+@include color-style('white', $white);
+
+@mixin button-style($class, $color) {
+	.mdl-button--#{$class}.mdl-button--#{$class} {
+		color: $color;
+
+		&.mdl-button--raised {
+			color: $white;
+			background-color: $color;
+
+			&:hover, &:active {
+				background-color: lighten($color, 15%);
+			}
+		}
+	}
+
+	.mdl-button--fab.mdl-button--#{$class} {
+		color: $white;
+		background-color: $color;
+
+		&:hover, &:active {
+			background-color: lighten($color, 15%);
+		}
+	}
+}
+
+.hover__accent2:hover {
+	color: $accentColor2 !important;
+}
+
+@include button-style('primary', $primaryBrandColor);
+@include button-style('accent', $primaryAccentColor);
+@include button-style('accent1', $accentColor1);
+@include button-style('accent2', $accentColor2);
+@include button-style('accent3', $accentColor3);
+@include button-style('accent4', $accentColor4);
+@include button-style('success', $activeGreen);
+@include button-style('warning', $toastYellow);
+@include button-style('error', $activeRed);
+@include button-style('white', $white);
+
+.divider-top {
+	border-top: 1px ridge $primaryAccentColor;
+}
+
+.mdl-card__title-text {
+	&.fill {
+		flex-grow: 1;
+	}
+	&.center {
+		align-self: center;
+		text-align: center;
+		justify-content: center;
+	}
+}
+
+.full-width {
+	width: 100%;
+
+	.mdl-list__item-sub-title {
+		max-width: 50%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+.mdl-button--fab.mdl-button--micro-fab {
+	$height: 24px;
+
+	height: $height;
+	min-width: $height;
+	width: $height;
+}
+
+.icon-column {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+[e-go], [e-add-row] {
+	cursor: pointer;
+}
+
+[e-add-row] {
+	color: $activeGreen;
+	margin-left: 8px;
+}
+
+.user-menu {
+	li {
+		display: flex;
+		align-content: center;
+		justify-content: space-around;
+		align-items: center;
+	}
+}
+
+[draggable] {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -khtml-user-drag: element;
+	-webkit-user-drag: element;
+	outline: none;
+	cursor: pointer;
+}
+.sortable-moving {
+	opacity: .4;
+	cursor: grabbing;
+}
+.sortable-over {
+	border: 2px dashed #000;
+}
+
+[rank] {
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding: 8px 16px;
+}
+
+[rank]::before {
+	content: attr(rank);
+	font-size: smaller;
+	margin-right: 6px;
+	color: $primaryGrayColor;
+}
+
+button.delete-row {
+	color: $activeRed;
+	font-size: 16px;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+input.inline {
+	border: none;
+	margin: 0;
+	padding: 0;
+	font-family: -apple-system-body, "Helvetica Neue", sans-serif;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+.payout-form {
+	overflow: visible;
+}
+
+ol.mdl-list__item-sub-title.horizontal.horizontal {
+    display: flex;
+	max-width: 100%;
+
+	& li {
+		margin-left: 24px;
+	}
+}
+
+h3.list-heading {
+	font-size: 24px;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+}

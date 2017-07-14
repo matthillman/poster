@@ -1,0 +1,77 @@
+{
+	"disallowSpacesInNamedFunctionExpression": {
+		"beforeOpeningRoundBrace": true
+	},
+	"disallowSpacesInFunctionExpression": {
+		"beforeOpeningRoundBrace": true
+	},
+	"disallowSpacesInAnonymousFunctionExpression": {
+		"beforeOpeningRoundBrace": true
+	},
+	"disallowSpacesInFunctionDeclaration": {
+		"beforeOpeningRoundBrace": true
+	},
+	"disallowEmptyBlocks": true,
+	"disallowQuotedKeysInObjects": true,
+	"disallowSpaceAfterObjectKeys": true,
+	"disallowSpaceAfterPrefixUnaryOperators": [
+		"++",
+		"--",
+		"+",
+		"-",
+		"~"
+	],
+	"disallowSpaceBeforePostfixUnaryOperators": true,
+	"disallowSpaceBeforeBinaryOperators": [
+		","
+	],
+	"disallowMixedSpacesAndTabs": true,
+	"disallowTrailingWhitespace": true,
+	"disallowKeywords": ["with"],
+	"disallowMultipleLineBreaks": true,
+	"disallowMultipleVarDecl": { "allExcept": ["undefined"] },
+	"requireSpaceBeforeBlockStatements": true,
+	"requireParenthesesAroundIIFE": false,
+	"requireSpacesInConditionalExpression": true,
+	"requireBlocksOnNewline": 1,
+	"requireCommaBeforeLineBreak": true,
+	"requireSpaceBeforeBinaryOperators": true,
+	"requireSpaceAfterBinaryOperators": true,
+	"requireCamelCaseOrUpperCaseIdentifiers": true,
+	"requireLineFeedAtFileEnd": true,
+	"requireCapitalizedConstructors": true,
+	"requireDotNotation": true,
+	"requireSpacesInForStatement": true,
+	"requireSpaceBetweenArguments": true,
+	"requireCurlyBraces": [
+		"if",
+		"else",
+		"for",
+		"while",
+		"do",
+		"try",
+		"catch"
+	],
+	"requireSpaceAfterKeywords": [
+		"if",
+		"else",
+		"for",
+		"while",
+		"do",
+		"switch",
+		"case",
+		"return",
+		"try",
+		"catch",
+		"typeof"
+	],
+	"safeContextKeyword": ["_this", "ctrl"],
+	"validateLineBreaks": "LF",
+	"validateIndentation": "\t",
+	"excludeFiles": [
+		"./public/**",
+		"./node_modules/**",
+		"./third-party/**",
+		"./test/karma.conf.js"
+	]
+}
