@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
 		Fideloper\Proxy\TrustedProxyServiceProvider::class,
+		MicheleCurletta\LaravelScheduleOverview\ScheduleOverviewServiceProvider::class,
 
     ],
 
