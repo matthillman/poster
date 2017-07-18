@@ -18,7 +18,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Commands\PostPayoutOrder::class
+        Commands\PostPayoutOrder::class,
+        Commands\RunHourly::class,
     ];
 
     /**
