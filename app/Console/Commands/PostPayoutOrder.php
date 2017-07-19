@@ -41,12 +41,15 @@ class PostPayoutOrder extends Command
     public function handle()
     {
 		$payout = Payout::find($this->argument('payout'));
-		$this->info($payout->name);
+		$this->line('<info>Processing payout:</info> ' . $payout->name);
 		$message = $payout->blurb . "\n";
 		foreach ($payout->members->sortBy('todays_order') as $member) {
 			$message .= "  {$member->todays_order}. {$member->name}\n";
 		}
 		$client = new Client;
+
+		$this->line("<info>Sending message:</info>\n" . $message);
+		$this->line("<info>URL:</info> " . $payout->webhook->webhook_url);
 		$response = $client->post($payout->webhook->webhook_url, [
 			'json' => ['content' => $message]
 		]);
