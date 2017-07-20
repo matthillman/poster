@@ -5,6 +5,7 @@ namespace App\Console;
 use DateTime;
 use DateInterval;
 
+use App\User;
 use App\Payout;
 use App\Console\Commands\PostPayoutOrder;
 use Illuminate\Console\Scheduling\Schedule;
@@ -33,7 +34,9 @@ class Kernel extends ConsoleKernel
         Payout::all()->each(function($payout) use ($schedule) {
 			$d = new DateTime($payout->order_effective_at);
 			$d->sub(new DateInterval('PT1H'));
-			$schedule->command(PostPayoutCommand::class, [$payout->id])->dailyAt($d->format("G:i"));
+			$schedule->command(PostPayoutCommand::class, [$payout->id])
+				->dailyAt($d->format("G:i"))
+				->emailOutputTo(User::find(1)->email);
 		});
     }
 
