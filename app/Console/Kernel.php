@@ -34,7 +34,7 @@ class Kernel extends ConsoleKernel
         Payout::all()->each(function($payout) use ($schedule) {
 			$d = new DateTime($payout->order_effective_at);
 			$d->sub(new DateInterval('PT1H'));
-			$schedule->command(PostPayoutCommand::class, [$payout->id])
+			$schedule->command(Commands\PostPayoutOrder::class, [$payout->id])
 				->dailyAt($d->format("G:i"))
 				->emailOutputTo(User::find(1)->email);
 		});
