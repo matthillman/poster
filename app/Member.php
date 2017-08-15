@@ -28,7 +28,6 @@ class Member extends Model
 		$days = $today->diff($startDate)->d;
 
 		$order = range($this->payout->members->count(), 1);
-		\Log::error("Range", [$order]);
 		$startIndex = array_search($this->starting_rank, $order);
 		$endIndex = ($startIndex + $days) % count($order);
 
