@@ -27,7 +27,7 @@ class Member extends Model
 		$today->setTime((int)$startDate->format('H'), (int)$startDate->format('M'));
 		$days = $today->diff($startDate)->d;
 
-		$order = [3, 2, 1];
+		$order = range($this->payout->members->count(), 1);
 		$startIndex = array_search($this->starting_rank, $order);
 		$endIndex = ($startIndex + $days) % 3;
 

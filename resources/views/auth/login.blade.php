@@ -4,7 +4,7 @@
 <form class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp login-card" role="form" method="POST" action="{{ url('/login') }}">
 	{{ csrf_field() }}
     <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text fill center">Bomgar Mobile Notifications</h2>
+        <h2 class="mdl-card__title-text fill center">Shard Mafia Poster</h2>
     </div>
     <div class="mdl-card__supporting-text">
         <div class="login-form flex-vertical-centered">
