@@ -92,13 +92,15 @@ class ServerController extends Controller
 		$order = explode(';', $request->member_order);
 		$members = [];
 
-		foreach ($request->members as $member) {
-			list($mID, $name) = explode(';', $member);
-			$id = (int)str_replace('__', '', $mID);
-			$member = strpos($mID, '__') === false ? Member::find($id) : new Member;
-			$member->name = $name;
-			$member->starting_rank = array_search($id, $order) + 1;
-			$members[] = $member;
+		if ($request->members !== null) {
+			foreach ($request->members as $member) {
+				list($mID, $name) = explode(';', $member);
+				$id = (int)str_replace('__', '', $mID);
+				$member = strpos($mID, '__') === false ? Member::find($id) : new Member;
+				$member->name = $name;
+				$member->starting_rank = array_search($id, $order) + 1;
+				$members[] = $member;
+			}
 		}
 		$server->payouts()->save($payout);
 		$payout->members()->saveMany($members);
