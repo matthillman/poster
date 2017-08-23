@@ -52,7 +52,8 @@ class RunHourly extends Command
     {
         $eventsRan = false;
 
-		$cutoff = Carbon::now()->minute(0)->second(0)->timezone('UTC');
+		$cutoff = Carbon::now();
+		$cutoff = $cutoff->minute($cutoff->minute < 30 ? 0 : 30)->second(0)->timezone('UTC');
 		$this->line('<info>Running all events due at:<info> ' . $cutoff->toDateTimeString());
 
 		foreach ($this->schedule->events() as $event) {
